@@ -116,8 +116,14 @@ contains(names, 'Colt', result => {
 
 const uniq = (arr, callback) => {
   for(let i = 0; i < arr.length; i++) {
-    if()
-  }
+    for(j = i + 1; j < arr.length; j++) {
+      if(arr[i] === arr[j]) {
+        arr.splice(j, 1) 
+        
+      } 
+    }
+  } 
+  callback(arr)
 }
 
 /*
@@ -127,7 +133,9 @@ const uniq = (arr, callback) => {
   'The new names array with all the duplicate items removed is [UNIQARRPARAM].'
 */
 
-// CODE HERE
+uniq(names, uniqArr => {
+  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`)
+})
 
 
 
@@ -138,7 +146,11 @@ const uniq = (arr, callback) => {
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-// CODE HERE 
+const each = (array, callback) => {
+   array.forEach((element, index) => {
+     callback(element, index)
+   })
+}
 
 
 /*
@@ -148,7 +160,9 @@ const uniq = (arr, callback) => {
   'The item at index [INDEXPARAM] is [ITEMPARAM].'
 */
 
-// CODE HERE
+each(names, (item, index) => {
+  console.log(`The item at index ${index} is ${item}`)
+})
 
 
 ////////// PROBLEM 7 //////////
@@ -181,7 +195,7 @@ var users = [
 ]
 // Do not edit the code above.
 
-// CODE HERE 
+const getUserById = ()
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
